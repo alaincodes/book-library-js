@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <h1>Library</h1>
+      <button id="modal-btn" class="add-book-btn">Add Book</button>
+    </nav>
+    <!-- BOOKS TABLE CONFIG AND CONTENT -->
+    <table class="table-box">
+      <tr>
+        <th>Author</th>
+        <th>Title</th>
+        <th>Pages</th>
+        <th>Read ?</th>
+        <th>Delete</th>
+      </tr>
+      <tr>
+        <td>Haruki MURAKAMI</td>
+        <td>LE MEURTRE DU COMMANDEUR</td>
+        <td>456</td>
+        <td>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider"></span>
+          </label>
+        </td>
+        <td><button class="remove-book-btn">Remove</button></td>
+      </tr>
+      <tr>
+        <td>Haruki MURAKAMI</td>
+        <td>BIRTHDAY GIRL</td>
+        <td>64</td>
+        <td>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider"></span>
+          </label>
+        </td>
+        <td><button class="remove-book-btn">Remove</button></td>
+      </tr>
+      <tr>
+        <td>Haruki MURAKAMI</td>
+        <td>DES HOMMES SANS FEMMES</td>
+        <td>288</td>
+        <td>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider"></span>
+          </label>
+        </td>
+        <td><button class="remove-book-btn">Remove</button></td>
+      </tr>
+    </table>
+
+    <!-- MODAL CONFIG AND CONTENT -->
+    <section id="modal-box" class="modal-box">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <form class="form-box" action="#">
+          <fieldset>
+            <legend>Book information</legend>
+            Author:<br />
+            <input type="text" name="author" value="Book's author.." /><br />
+            Title:<br />
+            <input type="text" name="title" value="Book's title.." /><br />
+            Pages: <br />
+            <input type="number" name="page" value="0" /><br />
+            Read ?
+            <input type="radio" name="gender" value="male" checked /> Yes
+            <input type="radio" name="gender" value="female" /> No<br />
+            <input type="submit" value="Submit" />
+          </fieldset>
+        </form>
+      </div>
+    </section>
+    <script src="./app.js"></script>
+  </body>
+</html>
