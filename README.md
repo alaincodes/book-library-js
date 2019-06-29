@@ -3,4 +3,4 @@ Building book library vanillllllaaaa JS
 HTML CSS DONE
 JavaScript part to do!!!
 
-live demo : mybookland.netlify.com
+live demo : https://mybookland.netlify.com/
