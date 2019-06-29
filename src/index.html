@@ -9,7 +9,7 @@
   </head>
   <body>
     <nav>
-      <h1>Library</h1>
+      <h1>My Library</h1>
       <button id="modal-btn" class="add-book-btn">Add Book</button>
     </nav>
     <!-- BOOKS TABLE CONFIG AND CONTENT -->
@@ -103,14 +103,24 @@
           <fieldset>
             <legend>Book information</legend>
             Author:<br />
-            <input type="text" name="author" value="Book's author.." /><br />
+            <input
+              type="text"
+              name="author"
+              id="author"
+              value="Book's author.."
+            /><br />
             Title:<br />
-            <input type="text" name="title" value="Book's title.." /><br />
+            <input
+              type="text"
+              name="title"
+              id="title"
+              value="Book's title.."
+            /><br />
             Pages: <br />
-            <input type="number" name="page" value="0" /><br />
+            <input type="number" name="page" id="pages" value="0" /><br />
             Read ?
-            <input type="radio" name="gender" value="male" checked /> Yes
-            <input type="radio" name="gender" value="female" /> No<br />
+            <input type="radio" name="yes" id="read" value="male" checked /> Yes
+            <input type="radio" name="no" value="female" /> No<br />
             <input type="submit" value="Submit" />
           </fieldset>
         </form>
