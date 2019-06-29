@@ -57,19 +57,25 @@ nav {
 }
 table {
   color: var(--secondary);
-  border-collapse: collapse;
+  border: 2px solid var(--secondary);
   width: 100%;
+  border-collapse: collapse;
 }
 
 td,
 th {
-  border: 1px solid var(--secondary);
   text-align: left;
   padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #e07f7c7e;
+  background-color: #18284588;
+  color: var(--primary);
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+tr:hover {
+  background-color: var(--grey);
 }
 
 .switch {
@@ -92,7 +98,7 @@ tr:nth-child(even) {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 0, 0, 0.822);
+  background-color: rgba(255, 21, 21, 0.822);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -126,9 +132,10 @@ input:checked + .slider:before {
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   color: var(--secondary);
+  border-radius: 6px;
   &:hover {
-    background: var(--secondary);
-    color: var(--primary);
+    background: rgba(255, 0, 0, 0.822);
+    color: var(--secondary);
   }
 }
 
