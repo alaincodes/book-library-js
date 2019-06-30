@@ -13,15 +13,15 @@
       <button id="modal-btn" class="add-book-btn">Add Book</button>
     </nav>
     <!-- BOOKS TABLE CONFIG AND CONTENT -->
-    <table class="table-box">
-      <tr>
+    <table id="book-table" class="table-box">
+      <!-- <tr>
         <th>Author</th>
         <th>Title</th>
         <th>Pages</th>
         <th>Read ?</th>
         <th>Delete</th>
-      </tr>
-      <tr>
+      </tr> -->
+      <!-- <tr>
         <td>Haruki MURAKAMI</td>
         <td>LE MEURTRE DU COMMANDEUR</td>
         <td>456</td>
@@ -92,7 +92,7 @@
           </label>
         </td>
         <td><button class="remove-book-btn">Remove</button></td>
-      </tr>
+      </tr> -->
     </table>
 
     <!-- MODAL CONFIG AND CONTENT -->
@@ -107,21 +107,21 @@
               type="text"
               name="author"
               id="author"
-              value="Book's author.."
+              placeholder="Book's author.."
             /><br />
             Title:<br />
             <input
               type="text"
               name="title"
               id="title"
-              value="Book's title.."
+              placeholder="Book's title.."
             /><br />
             Pages: <br />
-            <input type="number" name="page" id="pages" value="0" /><br />
+            <input type="number" name="page" id="pages" placeholder="0" /><br />
             Read ?
-            <input type="radio" name="yes" id="read" value="male" checked /> Yes
-            <input type="radio" name="no" value="female" /> No<br />
-            <input type="submit" value="Submit" />
+            <input type="radio" name="yes" id="read" checked /> Yes
+            <input type="radio" name="no" /> No<br />
+            <input type="submit" id="submit-btn" value="Submit" />
           </fieldset>
         </form>
       </div>
