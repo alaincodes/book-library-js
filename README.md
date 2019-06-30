@@ -5,4 +5,4 @@ HTML CSS DONE
 
 JavaScript part to do!!!
 
-live demo : https://mybookland.netlify.com/
+live demo : https://mylibraryland.netlify.com/
