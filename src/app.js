@@ -1,19 +1,6 @@
-// const modal = document.getElementById("modal-box");
-const modalButton = document.getElementById("modal-btn");
-const closeModalBtn = document.getElementsByClassName("close-modal")[0];
-
-const submitBtn = document.getElementById("submit-btn");
-const bookTable = document.getElementById("book-table");
-const bookTitle = document.getElementById("title");
-const bookAuthor = document.getElementById("author");
-const bookPages = document.getElementById("pages");
-const bookRead = document.getElementById("read");
-const deleteBtn = document.getElementById("delete-btn");
-
-const bookHeaders = ["TITLE", "AUTHOR", "PAGES", "READ", "REMOVE"];
+const tableHeaders = ["TITLE", "AUTHOR", "PAGES", "FINISHED", "REMOVE"];
 
 function saveLibrary() {
-  // Persistently store the data
   localStorage.setItem("library", JSON.stringify(myLibrary));
 }
 
@@ -29,16 +16,17 @@ function getLibrary() {
   return data;
 }
 
-function Book(title, author, pages) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = false;
+class Book {
+  constructor(title, author, pages) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = false;
+  }
+  toggleRead() {
+    this.read = this.read ? false : true;
+  }
 }
-
-Book.prototype.toggleRead = function() {
-  this.read = this.read ? false : true;
-};
 
 function createBook() {
   let author = document.getElementById("author").value;
@@ -65,25 +53,17 @@ function removeBook(index) {
 }
 
 function clearTable() {
-  // delete all displayed book records
   let library = document.getElementById("book-table");
   while (library.firstChild) {
     library.removeChild(library.firstChild);
   }
 }
 
-function deleteLibrary() {
-  localStorage.clear();
-  myLibrary = getLibrary();
-  clearTable();
-  render();
-}
-
 function render() {
   let bookList = document.getElementById("book-table");
   let bookHeader = document.createElement("tr");
 
-  bookHeaders.forEach(header => {
+  tableHeaders.forEach(header => {
     th = document.createElement("th");
     th.innerHTML = header;
     bookHeader.appendChild(th);
@@ -123,6 +103,8 @@ function render() {
 
 let myLibrary = getLibrary();
 
+render();
+
 function hideModal() {
   let modal = document.getElementById("modal-box");
   modal.style.display = "none";
@@ -144,8 +126,8 @@ closeBtn.addEventListener("click", function() {
 });
 
 let addBook = document.querySelector(".form-box");
-addBook.addEventListener("submit", function(e) {
-  e.preventDefault();
+addBook.addEventListener("submit", function(event) {
+  event.preventDefault();
   let book = createBook();
   addBookToLibrary(book);
   hideModal();
