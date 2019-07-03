@@ -1,4 +1,4 @@
-const tableHeaders = ["TITLE", "AUTHOR", "PAGES", "FINISHED", "REMOVE"];
+const tableHeaders = ["TITLE", "AUTHOR", "PAGES", "READ", "DELETE"];
 
 function saveLibrary() {
   localStorage.setItem("library", JSON.stringify(myLibrary));
@@ -68,7 +68,6 @@ function render() {
     th.innerHTML = header;
     bookHeader.appendChild(th);
   });
-  bookList.classList.add("table-box");
   bookList.appendChild(bookHeader);
 
   myLibrary.forEach((book, id) => {
